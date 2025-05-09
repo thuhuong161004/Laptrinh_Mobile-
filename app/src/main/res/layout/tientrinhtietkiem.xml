@@ -152,7 +152,7 @@
             </LinearLayout>
 
             <!-- Box tiến trình -->
-            <androidx.cardview.widget.CardView
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 card_view:cardCornerRadius="12dp"
@@ -256,10 +256,10 @@
                         android:text="Đạt 70%"
                         android:textColor="#4CAF50" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </ScrollView>
 
             <!-- Nhận xét -->
-            <androidx.cardview.widget.CardView
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 card_view:cardCornerRadius="12dp"
@@ -291,7 +291,7 @@
                         android:textColor="#000000"
                         android:textSize="14sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </ScrollView>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

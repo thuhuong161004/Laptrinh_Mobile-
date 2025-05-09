@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">laptrinh_mobile</string>
-<<<<<<< HEAD
-</resources>
-=======
+
     <string name="add_expense">Thêm chi tiêu</string>
 </resources>
->>>>>>> 58dc7ef5a6cdc7ad68367bca3e0834b9b63798d1
+

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-=======
     <color name="primary_green">#4CAF50</color> <!-- Màu xanh lá cây chính -->
     <color name="text_color">#FFFFFF</color> <!-- Màu chữ trắng -->
     <color name="teal_200">#03DAC6</color>
@@ -11,5 +10,5 @@
     <color name="colorPrimary">#4CAF50</color> <!-- Tương đương primary_green -->
     <color name="colorPrimaryDark">#388E3C</color> <!-- Một sắc thái đậm hơn của xanh lá cây -->
     <color name="colorAccent">#81C784</color> <!-- Một sắc thái nhạt hơn, dùng làm điểm nhấn -->
->>>>>>> 58dc7ef5a6cdc7ad68367bca3e0834b9b63798d1
+
 </resources>

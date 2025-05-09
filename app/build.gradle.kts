@@ -5,7 +5,10 @@ plugins {
 android {
     namespace = "com.example.laptrinh_mobile"
     compileSdk = 35
-
+    dependencies {
+        implementation("androidx.appcompat:appcompat:1.6.1")
+        implementation("com.google.android.material:material:1.11.0")
+    }
     defaultConfig {
         applicationId = "com.example.laptrinh_mobile"
         minSdk = 24
@@ -29,20 +32,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
 }
 
-dependencies {
-<<<<<<< HEAD
 
-    implementation(libs.appcompat)
-=======
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
->>>>>>> 58dc7ef5a6cdc7ad68367bca3e0834b9b63798d1
-    implementation(libs.material)
-    implementation(libs.activity)
-    implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
-}

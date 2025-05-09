@@ -1,24 +1,13 @@
-<<<<<<< HEAD
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Laptrinh_mobile" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-    <style name="Theme.Laptrinh_mobile" parent="Base.Theme.Laptrinh_mobile" />
-=======
 <resources>
-    <!-- Theme mặc định -->
+    <!-- AppCompat Theme with ActionBar -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Các thuộc tính khác nếu cần -->
+        <!-- Custom attributes -->
     </style>
 
-    <!-- Theme không có ActionBar -->
-    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- AppCompat Theme without ActionBar -->
+    <style name="Theme.Laptrinh_Mobile" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
->>>>>>> 58dc7ef5a6cdc7ad68367bca3e0834b9b63798d1
 </resources>

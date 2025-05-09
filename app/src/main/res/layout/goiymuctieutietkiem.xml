@@ -44,7 +44,7 @@
             </LinearLayout>
 
             <!-- Card gợi ý -->
-            <androidx.cardview.widget.CardView
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -84,9 +84,7 @@
                         android:textSize="14sp" />
 
                 </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
+            </ScrollView>
         </LinearLayout>
 
     </ScrollView>
