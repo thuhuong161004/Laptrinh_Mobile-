@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <!-- Bottom Navigation - Fixed at bottom -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="#E2DEDE"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:weightSum="5"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/vitien" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ví tiền"
+                android:textSize="12sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/tietkiem" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiết kiệm"
+                android:textSize="12sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baocao" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Báo cáo"
+                android:textSize="12sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/thongbao" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông báo"
+                android:textSize="12sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/hoso" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hồ sơ"
+                android:textSize="12sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content - Scrollable above bottom navigation -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#4CAF50"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/app_logo" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đặt mục tiêu tiết kiệm"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Main Content with white background -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="16dp">
+
+                <!-- Tài khoản của tôi -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="#000000"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:elevation="4dp"
+                    android:radius="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tài khoản của tôi"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etCurrentBalance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nhập số dư hiện tại"
+                        android:inputType="number"
+                        android:textColor="#FFFFFF"
+                        android:text="50000000" />
+
+                </LinearLayout>
+
+                <!-- Đặt hạn mức tiết kiệm -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Đặt hạn mức tiết kiệm:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000" />
+
+                    <!-- Help Icon -->
+                    <ImageView
+                        android:id="@+id/ivHelp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@android:drawable/ic_menu_help"
+                        android:tint="#88888888" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etSavingsGoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Nhập số tiền bạn muốn tiết kiệm"
+                    android:inputType="number"
+                    android:background="@android:drawable/edit_text"
+                    android:padding="8dp"
+                    android:layout_marginBottom="24dp"/>
+
+                <!-- Thời gian hoàn thành -->
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thời gian hoàn thành:"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etCompletionDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Vui lòng chọn ngày đặt mục tiêu"
+                    android:inputType="date"
+                    android:focusable="false"/>
+                <!-- Mục tiêu tiết kiệm -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mục tiêu để bạn tiết kiệm là gì?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etSavingsPurpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Nhập mục tiêu"
+                    android:background="@android:drawable/edit_text"
+                    android:padding="8dp"
+                    android:layout_marginBottom="32dp"/>
+
+                <!-- Nút thiết lập -->
+                <Button
+                    android:id="@+id/btnSetGoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thiết lập mục tiêu"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="#FFFFFF"
+                    android:padding="12dp"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
