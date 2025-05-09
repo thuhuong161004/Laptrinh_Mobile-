@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_green">#4CAF50</color> <!-- Màu xanh lá cây chính -->
+    <color name="text_color">#FFFFFF</color> <!-- Màu chữ trắng -->
+    <color name="teal_200">#03DAC6</color>
+    <color name="expense_red">#F44336</color>
+    <color name="colorPrimary">#4CAF50</color> <!-- Tương đương primary_green -->
+    <color name="colorPrimaryDark">#388E3C</color> <!-- Một sắc thái đậm hơn của xanh lá cây -->
+    <color name="colorAccent">#81C784</color> <!-- Một sắc thái nhạt hơn, dùng làm điểm nhấn -->
+</resources>
