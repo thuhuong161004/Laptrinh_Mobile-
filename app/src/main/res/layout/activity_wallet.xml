@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Tổng chi tiêu -->
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng chi tiêu: 0 VND"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <!-- Tóm tắt chi tiêu -->
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Không có chi tiêu nào."
+        android:textSize="16sp"
+        android:paddingTop="10dp"
+        android:textColor="#555555" />
+
+    <!-- Nút thêm chi tiêu -->
+    <ImageView
+        android:id="@+id/btnAdd"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Thêm chi tiêu"
+        android:clickable="true"
+        android:focusable="true" />
+</LinearLayout>

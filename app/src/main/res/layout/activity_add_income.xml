@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_green"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số tiền thu nhập (VND):"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Nhập số tiền (VD: 1000000)"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_amount_label"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tv_category_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên mục:"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_amount"
+        android:layout_marginTop="16dp" />
+
+    <Spinner
+        android:id="@+id/spinner_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_category_label"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tv_note_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mô tả:"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_category"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/et_note"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Nhập mô tả (không bắt buộc)"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_note_label"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tv_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày tạo:"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_note"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+        android:focusable="false"
+        android:hint="Chọn ngày"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_date_label"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lưu"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_date"
+        android:layout_marginTop="32dp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quay lại"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_date"
+        android:layout_marginTop="32dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
