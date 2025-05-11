@@ -1,0 +1,6 @@
+# Sử dụng LF cho các file cụ thể
+*.kts   text eol=lf
+*.xml   text eol=lf
+
+# Sử dụng LF cho tất cả các file
+* text=auto

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Logo với viền -->
+        <FrameLayout
+            android:layout_width="235dp"
+            android:layout_height="234dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+
+        <!-- Số điện thoại label -->
+        <TextView
+            android:id="@+id/labelPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại:"
+            android:textColor="#002C5C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:layout_marginTop="32dp" />
+
+        <!-- Số điện thoại input -->
+        <LinearLayout
+            android:id="@+id/phoneInputWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_background"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="29dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/phone" />
+
+            <EditText
+                android:id="@+id/phoneEditText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:hint="Nhập số điện thoại"
+                android:textSize="18sp"
+                android:background="@android:color/transparent"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <!-- Mật khẩu label -->
+        <TextView
+            android:id="@+id/labelPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mật khẩu:"
+            android:textColor="#002C5C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:layout_marginTop="24dp" />
+
+        <!-- Mật khẩu input -->
+        <LinearLayout
+            android:id="@+id/passwordInputWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input_background"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/lock" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="306dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Nhập mật khẩu"
+                android:inputType="textPassword"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/togglePasswordButton"
+                android:layout_width="36dp"
+                android:layout_height="41dp"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:contentDescription="Hiện/ẩn mật khẩu"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/eye" />
+        </LinearLayout>
+
+        <!-- Quên mật khẩu + Tạo tài khoản -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quên mật khẩu?"
+                android:textColor="#002C5C"
+                android:textSize="14sp"
+                android:gravity="start" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tạo tài khoản"
+                android:textColor="#002C5C"
+                android:textSize="14sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Đăng nhập button -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Đăng nhập"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/gradient_button" />
+
+    </LinearLayout>
+</ScrollView>

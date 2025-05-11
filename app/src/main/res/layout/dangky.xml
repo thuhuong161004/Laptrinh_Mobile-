@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Nút quay lại -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="49dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Quay lại"
+        android:src="@drawable/back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/logo"
+                android:layout_marginBottom="16dp"
+                android:scaleType="fitCenter" />
+
+            <!-- Tên tài khoản -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_background"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/user"
+                    android:layout_gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:hint="Tên tài khoản"
+                    android:textSize="16sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <!-- Mật khẩu -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_background"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/lock" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="Mật khẩu"
+                    android:inputType="textPassword"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@+id/togglePasswordButton"
+                    android:layout_width="35dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Hiện/ẩn mật khẩu"
+                    android:padding="0dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/eye" />
+            </LinearLayout>
+
+            <!-- Số điện thoại + Gửi OTP -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_background"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/phone"
+                    android:layout_gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:hint="Số điện thoại"
+                    android:textSize="16sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="phone" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/green_light"
+                    android:backgroundTint="@null"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:text="Gửi OTP"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Mã OTP -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_background"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/edit"
+                    android:layout_gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:hint="Mã OTP"
+                    android:textSize="16sp"
+                    android:background="@android:color/transparent"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <!-- Nút đăng ký -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:text="Đăng ký"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/gradient_button"
+                android:backgroundTint="@null" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
