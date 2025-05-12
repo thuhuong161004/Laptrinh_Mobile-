@@ -21,6 +21,10 @@
         <activity android:name=".SetSavingsGoalActivity" />
         <activity android:name=".SavingsProgressActivity" />
         <activity android:name=".GoiYTietKiemActivity" />
+        <activity android:name=".CaiDatTaiKhoanActivity" />
+        <activity android:name=".TroGiupVaHoTroActivity" />
+        <activity android:name=".ChinhSuaTaiKhoan" />
+        <activity android:name=".LuuTaiKhoanActivity" />
         <activity
             android:theme="@style/Theme.Laptrinh_Mobile"
             android:name=".LoginActivity"

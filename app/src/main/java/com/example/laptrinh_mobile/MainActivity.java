@@ -124,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
                         selectedFragment = isExpenseScreen ? new ExpenseFragment() : new IncomeFragment();
                         toolbar.setTitle(isExpenseScreen ? "Chi tiêu" : "Thu nhập");
                     } else if (item.getItemId() == R.id.nav_savings) {
-                        selectedFragment = new SavingsFragment();
-                        toolbar.setTitle("Tiết kiệm");
+                        startActivity(new Intent(MainActivity.this, SetSavingsGoalActivity.class));
+                        return true;
                     } else if (item.getItemId() == R.id.nav_report) {
                         selectedFragment = new ReportFragment();
                         toolbar.setTitle("Báo cáo");
@@ -133,9 +133,13 @@ public class MainActivity extends AppCompatActivity {
                         selectedFragment = new NotificationFragment();
                         toolbar.setTitle("Thông báo");
                     } else if (item.getItemId() == R.id.nav_profile) {
-                        selectedFragment = new ProfileFragment();
-                        toolbar.setTitle("Hồ sơ");
+                        Intent intent = new Intent(MainActivity.this, TroGiupVaHoTroActivity.class);
+                        startActivity(intent);
+                        return true;
                     }
+
+
+
 
                     if (selectedFragment != null) {
                         currentFragment = selectedFragment;
@@ -146,5 +150,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return true;
                 }
+
             };
 }
