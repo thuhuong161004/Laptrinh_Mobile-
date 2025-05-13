@@ -1,101 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="#FFFFFF">
 
-    <!-- Nội dung cuộn -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <!-- Hộp thông báo -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:background="#A8E6A2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_marginBottom="16dp"
+            android:text="📅"
+            android:textSize="48sp" />
 
-            <!-- Header -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:background="#4CAF50"
-                android:gravity="center_vertical"
-                android:padding="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Đặt lịch nhắc nhở thành công"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-                <ImageButton
-                    android:id="@+id/btnBack"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/back" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gợi ý mục tiêu tiết kiệm"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="8dp" />
-            </LinearLayout>
-
-            <!-- Card gợi ý -->
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                card_view:cardCornerRadius="20dp"
-                card_view:cardElevation="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="#EBEBEB">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Gợi ý tiết kiệm cá nhân hóa"
-                        android:textColor="#4CAF50"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="8dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dựa vào tiến trình tiết kiệm, chúng tôi đề xuất:"
-                        android:textColor="#000000"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="12dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="• Áp dụng quy tắc 50/30/20:\n   50% cho nhu cầu thiết yếu (ăn uống, nhà cửa).\n   30% cho sở thích cá nhân.\n   20% để tiết kiệm và đầu tư.\n\n• Hạn chế chi tiêu sắm không cần thiết\n• Biến sở thích thành thu nhập, giúp bạn có tiền tiết kiệm mà vẫn làm điều mình thích."
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-
-    </ScrollView>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E2DEDE" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_thoat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:text="Thoát"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#2E7D32" />
+    </LinearLayout>
 
     <!-- Bottom Navigation -->
     <LinearLayout
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:orientation="horizontal"
@@ -103,7 +52,8 @@
         android:gravity="center"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-        android:weightSum="5">
+        android:weightSum="5"
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:id="@+id/navWallet"
@@ -199,5 +149,5 @@
                 android:textSize="12sp"
                 android:textColor="#000000" />
         </LinearLayout>
-</LinearLayout>
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

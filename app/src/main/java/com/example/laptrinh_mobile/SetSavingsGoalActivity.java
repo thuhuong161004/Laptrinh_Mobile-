@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.laptrinh_mobile.Hoso.Main_hoso;
+import com.example.laptrinh_mobile.Thongbao.Main_thongbao;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -41,7 +44,19 @@ public class SetSavingsGoalActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        LinearLayout navThongbao = findViewById(R.id.navNotifications);
+        navThongbao.setOnClickListener(v -> {
+            Intent intent = new Intent(SetSavingsGoalActivity.this, Main_thongbao.class);
+            startActivity(intent);
+            finish();
+        });
 
+        LinearLayout navtietkiem = findViewById(R.id.navSavings);
+        navtietkiem.setOnClickListener(v -> {
+            Intent intent = new Intent(SetSavingsGoalActivity.this, AddExpenseActivity.class);
+            startActivity(intent);
+            finish();
+        });
         loadCurrentBalance();
 
         etCompletionDate.setOnClickListener(v -> showDatePickerDialog());
@@ -153,5 +168,7 @@ public class SetSavingsGoalActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SavingsProgressActivity.class);
         startActivity(intent);
     }
+
+
 
 }

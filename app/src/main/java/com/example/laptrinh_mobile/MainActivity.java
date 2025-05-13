@@ -132,10 +132,7 @@ public class MainActivity extends AppCompatActivity {
                     } else if (item.getItemId() == R.id.nav_notification) {
                         selectedFragment = new NotificationFragment();
                         toolbar.setTitle("Thông báo");
-                    } else if (item.getItemId() == R.id.nav_profile) {
-                        Intent intent = new Intent(MainActivity.this, TroGiupVaHoTroActivity.class);
-                        startActivity(intent);
-                        return true;
+
                     }
 
 

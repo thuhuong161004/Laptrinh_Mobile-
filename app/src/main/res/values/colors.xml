@@ -11,4 +11,8 @@
     <color name="colorPrimaryDark">#388E3C</color> <!-- Một sắc thái đậm hơn của xanh lá cây -->
     <color name="colorAccent">#81C784</color> <!-- Một sắc thái nhạt hơn, dùng làm điểm nhấn -->
 
+
+    <color name="holo_green_light">#FF99CC00</color>
+    <color name="bottom_nav_background">#E2DEDE</color>
+
 </resources>

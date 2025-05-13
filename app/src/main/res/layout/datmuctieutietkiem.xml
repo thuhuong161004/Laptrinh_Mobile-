@@ -18,7 +18,7 @@
         android:layout_alignParentBottom="true">
 
         <LinearLayout
-
+            android:id="@+id/navWallet"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -37,6 +37,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/navSavings"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -55,6 +56,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/navReports"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -73,6 +75,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/navNotifications"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -91,6 +94,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/navProfile"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
