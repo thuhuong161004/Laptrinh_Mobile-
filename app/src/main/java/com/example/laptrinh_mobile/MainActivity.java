@@ -98,15 +98,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void logout() {
         try {
-            // Đăng xuất Firebase
             firebaseAuth.signOut();
-            // Làm sạch DatabaseManager
             DatabaseManager.getInstance().clear();
-            // Cập nhật SharedPreferences
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isLoggedIn", false);
             editor.apply();
-            // Chuyển hướng đến LoginActivity
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
@@ -141,8 +137,8 @@ public class MainActivity extends AppCompatActivity {
                         selectedFragment = isExpenseScreen ? new ExpenseFragment() : new IncomeFragment();
                         toolbar.setTitle(isExpenseScreen ? "Chi tiêu" : "Thu nhập");
                     } else if (item.getItemId() == R.id.nav_savings) {
-                        selectedFragment = new SavingsFragment();
-                        toolbar.setTitle("Tiết kiệm");
+                        startActivity(new Intent(MainActivity.this, SetSavingsGoalActivity.class));
+                        return true;
                     } else if (item.getItemId() == R.id.nav_report) {
                         selectedFragment = new ReportFragment();
                         toolbar.setTitle("Báo cáo");

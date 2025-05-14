@@ -34,7 +34,7 @@ public class EditExpenseActivity extends AppCompatActivity {
 
         calendar = Calendar.getInstance();
         etAmount = findViewById(R.id.et_amount);
-        etDescription = findViewById(R.id.et_description);
+        etDescription = findViewById(R.id.et_note);
         etDate = findViewById(R.id.et_date);
         spinnerCategory = findViewById(R.id.spinner_category);
 

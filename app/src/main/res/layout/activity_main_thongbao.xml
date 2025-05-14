@@ -30,7 +30,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_notification"
+            android:text="mo"
             android:textColor="#FF0000"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -53,14 +53,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:contentDescription="@string/content_message_icon"
+            android:contentDescription="mo"
             android:src="@drawable/thongbao1" />
 
         <TextView
             android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/message_text"
+            android:text="text"
             android:textSize="20sp"
             android:textColor="#000000" />
     </LinearLayout>
@@ -74,7 +74,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@drawable/daucong"
-        android:contentDescription="@string/add_button_description"
+        android:contentDescription="mo"
         android:scaleType="center" />
 
     <!-- Menu dưới cùng -->

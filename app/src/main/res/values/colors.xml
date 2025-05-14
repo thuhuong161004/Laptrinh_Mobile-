@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+    <color name="text_color_dark">#212121</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_green">#4CAF50</color> <!-- Màu xanh lá cây chính -->
-    <color name="text_color">#FFFFFF</color> <!-- Màu chữ trắng -->
-    <color name="text_color_dark">#212121</color> <!-- Màu chữ đen đậm -->
+    <color name="primary_green">#4CAF50</color>
+    <color name="text_color">#FFFFFF</color>
     <color name="teal_200">#03DAC6</color>
     <color name="expense_red">#F44336</color>
     <color name="colorPrimary">#4CAF50</color>
     <color name="colorPrimaryDark">#388E3C</color>
     <color name="colorAccent">#81C784</color>
-    <color name="background_light_gray">#E0E0E0</color> <!-- Màu xám nhạt làm nền phụ -->
+
+
+    <color name="holo_green_light">#FF99CC00</color>
+    <color name="bottom_nav_background">#E2DEDE</color>
 </resources>

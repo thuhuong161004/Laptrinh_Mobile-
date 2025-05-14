@@ -12,8 +12,8 @@
         android:background="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Chi tiêu"
+        app:navigationIcon="@drawable/vitien"
         app:titleTextColor="@android:color/white"
-        app:navigationIcon="@drawable/my_image"
         app:menu="@menu/toolbar_menu" />
 
     <FrameLayout

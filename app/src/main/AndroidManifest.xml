@@ -11,119 +11,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExpenseManager">
+        <activity android:name=".MainActivity" android:exported="false" />
         <activity android:name=".LogoutActivity" android:exported="false" />
-
-
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SetSavingsGoalActivity" />
-        <activity android:name=".SavingsProgressActivity" />
-        <activity android:name=".GoiYTietKiemActivity" />
-
-        <activity
-            android:theme="@style/Theme.AppCompat.DayNight"
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddExpenseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddIncomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditExpenseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditIncomeActivity"
-            android:exported="false" />
-<!--thu minh-->
-        <activity
-            android:name=".Hoso.Main_trogiup5"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_trogiup4"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_trogiup3"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_luudanhgia"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_editthongtin"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_caidat_thanhcong"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_thongtin"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_caidat"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_trogiup2"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_dieukhoan"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_trogiup"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_danhgia"
-            android:exported="false" />
-        <activity
-            android:name=".Hoso.Main_hoso"
-            android:exported="false" />
-        <activity
-            android:name=".Thongbao.Main_datthanhcong"
-            android:exported="false" />
-        <activity
-            android:name=".Thongbao.Main_tgdatlich"
-            android:exported="false" />
-        <activity
-            android:name=".Thongbao.Main_datlich"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".Thongbao.Main_thongbao" -->
-        <!-- android:exported="false" /> -->
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ForgotPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RetrieveUsernameActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ResetPasswordActivity"
-            android:exported="false" />
-        <activity android:name=".TotpSetupActivity" />
-        <activity android:name=".TotpVerifyActivity" />
+        <activity android:name=".SetSavingsGoalActivity" android:exported="false" />
+        <activity android:name=".SavingsProgressActivity" android:exported="false" />
+        <activity android:name=".GoiYTietKiemActivity" android:exported="false" />
+        <activity android:name=".AddExpenseActivity" android:exported="false" />
+        <activity android:name=".AddIncomeActivity" android:exported="false" />
+        <activity android:name=".EditExpenseActivity" android:exported="false" />
+        <activity android:name=".EditIncomeActivity" android:exported="false" />
+        <activity android:name=".Hoso.Main_trogiup5" android:exported="false" />
+        <activity android:name=".Hoso.Main_trogiup4" android:exported="false" />
+        <activity android:name=".Hoso.Main_trogiup3" android:exported="false" />
+        <activity android:name=".Hoso.Main_luudanhgia" android:exported="false" />
+        <activity android:name=".Hoso.Main_editthongtin" android:exported="false" />
+        <activity android:name=".Hoso.Main_caidat_thanhcong" android:exported="false" />
+        <activity android:name=".Hoso.Main_thongtin" android:exported="false" />
+        <activity android:name=".Hoso.Main_caidat" android:exported="false" />
+        <activity android:name=".Hoso.Main_trogiup2" android:exported="false" />
+        <activity android:name=".Hoso.Main_dieukhoan" android:exported="false" />
+        <activity android:name=".Hoso.Main_trogiup" android:exported="false" />
+        <activity android:name=".Hoso.Main_danhgia" android:exported="false" />
+        <activity android:name=".Hoso.Main_hoso" android:exported="false" />
+        <activity android:name=".Thongbao.Main_datthanhcong" android:exported="false" />
+        <activity android:name=".Thongbao.Main_tgdatlich" android:exported="false" />
+        <activity android:name=".Thongbao.Main_datlich" android:exported="false" />
+        <activity android:name=".Thongbao.Main_thongbao" android:exported="false" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+        <activity android:name=".ForgotPasswordActivity" android:exported="false" />
+        <activity android:name=".RetrieveUsernameActivity" android:exported="false" />
+        <activity android:name=".ResetPasswordActivity" android:exported="false" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
-        <activity
-            android:name=".Thongbao.Main_thongbao"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <receiver
             android:name=".Thongbao.Nhanthongbao"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
