@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên đăng nhập"
+        android:inputType="text"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color_dark"
+        android:textColorHint="#757575"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color_dark"
+        android:textColorHint="#757575"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/et_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Xác nhận mật khẩu"
+        android:inputType="textPassword"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color_dark"
+        android:textColorHint="#757575"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng ký"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập email của bạn"
+        android:inputType="textEmailAddress"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color_dark"
+        android:textColorHint="#757575" />
+
+    <Button
+        android:id="@+id/btn_send_otp_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gửi mã OTP qua email"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
