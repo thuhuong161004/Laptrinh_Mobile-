@@ -16,9 +16,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") } // Thêm JitPack
     }
 }
 
 rootProject.name = "laptrinh_mobile"
 include(":app")
- 

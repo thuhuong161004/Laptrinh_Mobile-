@@ -24,7 +24,15 @@ public class AddIncomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_income);
 
-        dbHelper = new DatabaseHelper(this);
+        // Sử dụng DatabaseManager để lấy DatabaseHelper
+        try {
+            dbHelper = DatabaseManager.getInstance().getDatabaseHelper();
+        } catch (IllegalStateException e) {
+            Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
         calendar = Calendar.getInstance();
 
         etAmount = findViewById(R.id.et_amount);

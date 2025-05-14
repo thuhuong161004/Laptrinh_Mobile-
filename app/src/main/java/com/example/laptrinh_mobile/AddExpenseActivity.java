@@ -24,7 +24,15 @@ public class AddExpenseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
 
-        dbHelper = new DatabaseHelper(this);
+        // Sử dụng DatabaseManager để lấy DatabaseHelper
+        try {
+            dbHelper = DatabaseManager.getInstance().getDatabaseHelper();
+        } catch (IllegalStateException e) {
+            Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
         calendar = Calendar.getInstance();
 
         etAmount = findViewById(R.id.et_amount);
@@ -69,7 +77,7 @@ public class AddExpenseActivity extends AppCompatActivity {
         String amountStr = etAmount.getText().toString();
         String category = spinnerCategory.getSelectedItem().toString();
         String date = etDate.getText().toString();
-        String note = etNote.getText().toString();
+        String description = etNote.getText().toString(); // Sửa từ note
 
         if (amountStr.isEmpty() || category.isEmpty() || date.isEmpty()) {
             Toast.makeText(this, "Vui lòng điền đầy đủ thông tin bắt buộc", Toast.LENGTH_SHORT).show();
@@ -78,7 +86,7 @@ public class AddExpenseActivity extends AppCompatActivity {
 
         try {
             double amount = Double.parseDouble(amountStr);
-            long id = dbHelper.addExpense(amount, category, date, note);
+            long id = dbHelper.addExpense(amount, category, date, description); // Sửa từ note
             if (id != -1) {
                 Toast.makeText(this, "Đã thêm chi tiêu", Toast.LENGTH_SHORT).show();
                 finish();

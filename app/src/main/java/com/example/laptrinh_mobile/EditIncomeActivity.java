@@ -17,15 +17,23 @@ public class EditIncomeActivity extends AppCompatActivity {
     private EditText etAmount, etNote, etDate;
     private Spinner spinnerCategory;
     private DatabaseHelper dbHelper;
-    private long incomeId;
     private Calendar calendar;
+    private long incomeId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_income);
+        setContentView(R.layout.activity_add_income); // Sử dụng activity_add_income
 
-        dbHelper = new DatabaseHelper(this);
+        // Sử dụng DatabaseManager để lấy DatabaseHelper
+        try {
+            dbHelper = DatabaseManager.getInstance().getDatabaseHelper();
+        } catch (IllegalStateException e) {
+            Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
         calendar = Calendar.getInstance();
 
         etAmount = findViewById(R.id.et_amount);
@@ -33,25 +41,23 @@ public class EditIncomeActivity extends AppCompatActivity {
         etDate = findViewById(R.id.et_date);
         spinnerCategory = findViewById(R.id.spinner_category);
 
+        // Lấy dữ liệu từ Intent
+        incomeId = getIntent().getLongExtra("incomeId", -1);
+        double amount = getIntent().getDoubleExtra("amount", 0.0);
+        String category = getIntent().getStringExtra("category");
+        String date = getIntent().getStringExtra("date");
+        String note = getIntent().getStringExtra("note");
+
         // Thiết lập Spinner cho danh mục thu nhập
-        String[] categories = {"Tiền lương", "Tiền thưởng", "Tiền đầu tư", "Tiền trợ cấp", "Khác"};
+        String[] categories = {"Tiền lương", "Tiền thưởng", "Đầu tư", "Quà tặng", "Khác"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategory.setAdapter(adapter);
 
-        // Lấy dữ liệu từ Intent
-        incomeId = getIntent().getLongExtra("INCOME_ID", -1);
-        double amount = getIntent().getDoubleExtra("INCOME_AMOUNT", 0.0);
-        String category = getIntent().getStringExtra("INCOME_CATEGORY");
-        String date = getIntent().getStringExtra("INCOME_DATE");
-        String note = getIntent().getStringExtra("INCOME_NOTE");
-
-        // Hiển thị dữ liệu lên giao diện
+        // Điền dữ liệu vào các trường
         etAmount.setText(String.valueOf(amount));
-        etNote.setText(note != null ? note : "");
+        etNote.setText(note);
         etDate.setText(date);
-
-        // Thiết lập danh mục trong Spinner
         for (int i = 0; i < categories.length; i++) {
             if (categories[i].equals(category)) {
                 spinnerCategory.setSelection(i);
@@ -64,16 +70,16 @@ public class EditIncomeActivity extends AppCompatActivity {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
             calendar.setTime(dateFormat.parse(date));
         } catch (Exception e) {
-            e.printStackTrace();
+            calendar = Calendar.getInstance();
         }
 
         // Xử lý chọn ngày
         etDate.setOnClickListener(v -> showDatePickerDialog());
 
-        // Xử lý nút Cập nhật
+        // Xử lý nút Lưu
         Button btnSave = findViewById(R.id.btn_save);
-        btnSave.setText("Cập nhật");
-        btnSave.setOnClickListener(v -> updateIncome());
+        btnSave.setText("Cập nhật"); // Đổi văn bản để phân biệt với AddIncomeActivity
+        btnSave.setOnClickListener(v -> saveIncome());
 
         // Xử lý nút Quay lại
         Button btnBack = findViewById(R.id.btn_back);
@@ -92,7 +98,7 @@ public class EditIncomeActivity extends AppCompatActivity {
         etDate.setText(dateFormat.format(calendar.getTime()));
     }
 
-    private void updateIncome() {
+    private void saveIncome() {
         String amountStr = etAmount.getText().toString();
         String category = spinnerCategory.getSelectedItem().toString();
         String date = etDate.getText().toString();

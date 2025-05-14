@@ -2,16 +2,6 @@
     <string name="app_name">laptrinh_mobile</string>
 
     <string name="add_expense">Thêm chi tiêu</string>
-
-    <string name="title_notification">Thông báo</string>
-    <string name="message_text">Đến hạn thanh toán tiền điện tháng 1. Hãy thanh toán !</string>
-    <string name="content_message_icon">Biểu tượng thông báo</string>
-    <string name="wallet">Ví tiền</string>
-    <string name="save">Tiết kiệm</string>
-    <string name="report">Báo cáo</string>
-    <string name="notification">Thông báo</string>
-    <string name="profile">Hồ sơ</string>
-
-    <string name="add_button_description">Nút thêm</string>
+    <string name="default_notification_channel_id">fcm_default_channel</string>
 </resources>
 

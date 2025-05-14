@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,7 +46,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
             intent.putExtra("EXPENSE_AMOUNT", expense.getAmount());
             intent.putExtra("EXPENSE_CATEGORY", expense.getCategory());
             intent.putExtra("EXPENSE_DATE", expense.getDate());
-            intent.putExtra("EXPENSE_NOTE", expense.getNote());
+            intent.putExtra("EXPENSE_DESCRIPTION", expense.getDescription()); // Sửa từ EXPENSE_NOTE
             context.startActivity(intent);
         });
 
@@ -55,13 +55,21 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
                     .setTitle("Xác nhận xóa")
                     .setMessage("Bạn có chắc muốn xóa chi tiêu này?")
                     .setPositiveButton("Xóa", (dialog, which) -> {
-                        DatabaseHelper dbHelper = new DatabaseHelper(context);
-                        dbHelper.deleteExpense(expense.getId());
-                        expenseList.remove(position);
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, expenseList.size());
-                        if (context instanceof MainActivity) {
-                            ((MainActivity) context).refreshFragment();
+                        try {
+                            DatabaseHelper dbHelper = DatabaseManager.getInstance().getDatabaseHelper();
+                            dbHelper.deleteExpense(expense.getId());
+                            expenseList.remove(position);
+                            notifyItemRemoved(position);
+                            notifyItemRangeChanged(position, expenseList.size());
+                            if (context instanceof MainActivity) {
+                                ((MainActivity) context).refreshFragment();
+                            }
+                        } catch (IllegalStateException e) {
+                            new AlertDialog.Builder(context)
+                                    .setTitle("Lỗi")
+                                    .setMessage("Không thể truy cập cơ sở dữ liệu: " + e.getMessage())
+                                    .setPositiveButton("OK", null)
+                                    .show();
                         }
                     })
                     .setNegativeButton("Hủy", null)
@@ -74,45 +82,9 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
         return expenseList.size();
     }
 
-    public static class Expense {
-        private long id;
-        private double amount;
-        private String category;
-        private String date;
-        private String note;
-
-        public Expense(long id, double amount, String category, String date, String note) {
-            this.id = id;
-            this.amount = amount;
-            this.category = category;
-            this.date = date;
-            this.note = note;
-        }
-
-        public long getId() {
-            return id;
-        }
-
-        public double getAmount() {
-            return amount;
-        }
-
-        public String getCategory() {
-            return category;
-        }
-
-        public String getDate() {
-            return date;
-        }
-
-        public String getNote() {
-            return note;
-        }
-    }
-
     public static class ExpenseViewHolder extends RecyclerView.ViewHolder {
         TextView tvAmount, tvCategory, tvDate;
-        Button btnEdit, btnDelete;
+        ImageButton btnEdit, btnDelete;
 
         public ExpenseViewHolder(@NonNull View itemView) {
             super(itemView);

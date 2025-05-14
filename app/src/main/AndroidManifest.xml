@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.laptrinh_mobile">
 
-    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:theme="@style/Theme.Laptrinh_Mobile"
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules">
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ExpenseManager">
+        <activity android:name=".LogoutActivity" android:exported="false" />
+
 
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,7 +27,7 @@
         <activity android:name=".GoiYTietKiemActivity" />
 
         <activity
-            android:theme="@style/Theme.Laptrinh_Mobile"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
@@ -89,6 +93,24 @@
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".Thongbao.Main_thongbao" -->
         <!-- android:exported="false" /> -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RetrieveUsernameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity android:name=".TotpSetupActivity" />
+        <activity android:name=".TotpVerifyActivity" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
         <activity
             android:name=".Thongbao.Main_thongbao"
             android:exported="true">

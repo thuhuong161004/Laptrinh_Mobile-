@@ -1,11 +1,11 @@
 <resources>
-    <!-- AppCompat Theme with ActionBar -->
+    <!-- Theme mặc định -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Custom attributes -->
+        <!-- Các thuộc tính khác nếu cần -->
     </style>
 
-    <!-- AppCompat Theme without ActionBar -->
-    <style name="Theme.Laptrinh_Mobile" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Theme không có ActionBar -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

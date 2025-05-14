@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_green"
-    android:padding="16dp">
+    android:background="@android:color/white"
+    android:padding="24dp">
 
     <TextView
         android:id="@+id/tv_amount_label"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Số tiền thu nhập (VND):"
         android:textSize="16sp"
-        android:textColor="@color/text_color"
+        android:textColor="@color/text_color_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,12 +23,14 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:hint="Nhập số tiền (VD: 1000000)"
-        android:textColor="@color/text_color"
-        android:textColorHint="@color/text_color"
+        android:textColor="@color/text_color_dark"
+        android:textColorHint="#757575"
+        android:backgroundTint="@color/primary_green"
+        android:contentDescription="Nhập số tiền thu nhập"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_amount_label"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="12dp" />
 
     <TextView
         android:id="@+id/tv_category_label"
@@ -36,19 +38,21 @@
         android:layout_height="wrap_content"
         android:text="Tên mục:"
         android:textSize="16sp"
-        android:textColor="@color/text_color"
+        android:textColor="@color/text_color_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_amount"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="24dp" />
 
     <Spinner
         android:id="@+id/spinner_category"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary_green"
+        android:contentDescription="Chọn danh mục thu nhập"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_category_label"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="12dp" />
 
     <TextView
         android:id="@+id/tv_note_label"
@@ -56,10 +60,10 @@
         android:layout_height="wrap_content"
         android:text="Mô tả:"
         android:textSize="16sp"
-        android:textColor="@color/text_color"
+        android:textColor="@color/text_color_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner_category"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="24dp" />
 
     <EditText
         android:id="@+id/et_note"
@@ -67,12 +71,14 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="Nhập mô tả (không bắt buộc)"
-        android:textColor="@color/text_color"
-        android:textColorHint="@color/text_color"
+        android:textColor="@color/text_color_dark"
+        android:textColorHint="#757575"
+        android:backgroundTint="@color/primary_green"
+        android:contentDescription="Nhập ghi chú thu nhập"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_note_label"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="12dp" />
 
     <TextView
         android:id="@+id/tv_date_label"
@@ -80,10 +86,10 @@
         android:layout_height="wrap_content"
         android:text="Ngày tạo:"
         android:textSize="16sp"
-        android:textColor="@color/text_color"
+        android:textColor="@color/text_color_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_note"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="24dp" />
 
     <EditText
         android:id="@+id/et_date"
@@ -92,32 +98,42 @@
         android:inputType="none"
         android:focusable="false"
         android:hint="Chọn ngày"
-        android:textColor="@color/text_color"
-        android:textColorHint="@color/text_color"
+        android:textColor="@color/text_color_dark"
+        android:textColorHint="#757575"
+        android:backgroundTint="@color/primary_green"
+        android:contentDescription="Chọn ngày thu nhập"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_date_label"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/btn_save"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Lưu"
         android:backgroundTint="@color/primary_green"
         android:textColor="@color/text_color"
+        android:contentDescription="Lưu thu nhập"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_back"
         app:layout_constraintTop_toBottomOf="@id/et_date"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:paddingVertical="12dp" />
 
     <Button
         android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Quay lại"
-        android:backgroundTint="@color/primary_green"
+        android:backgroundTint="@color/expense_red"
         android:textColor="@color/text_color"
+        android:contentDescription="Quay lại màn hình trước"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_save"
         app:layout_constraintTop_toBottomOf="@id/et_date"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:paddingVertical="12dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

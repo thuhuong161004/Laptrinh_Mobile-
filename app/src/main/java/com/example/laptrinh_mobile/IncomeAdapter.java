@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,13 +55,21 @@ public class IncomeAdapter extends RecyclerView.Adapter<IncomeAdapter.IncomeView
                     .setTitle("Xác nhận xóa")
                     .setMessage("Bạn có chắc muốn xóa thu nhập này?")
                     .setPositiveButton("Xóa", (dialog, which) -> {
-                        DatabaseHelper dbHelper = new DatabaseHelper(context);
-                        dbHelper.deleteIncome(income.getId());
-                        incomeList.remove(position);
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, incomeList.size());
-                        if (context instanceof MainActivity) {
-                            ((MainActivity) context).refreshFragment();
+                        try {
+                            DatabaseHelper dbHelper = DatabaseManager.getInstance().getDatabaseHelper();
+                            dbHelper.deleteIncome(income.getId());
+                            incomeList.remove(position);
+                            notifyItemRemoved(position);
+                            notifyItemRangeChanged(position, incomeList.size());
+                            if (context instanceof MainActivity) {
+                                ((MainActivity) context).refreshFragment();
+                            }
+                        } catch (IllegalStateException e) {
+                            new AlertDialog.Builder(context)
+                                    .setTitle("Lỗi")
+                                    .setMessage("Không thể truy cập cơ sở dữ liệu: " + e.getMessage())
+                                    .setPositiveButton("OK", null)
+                                    .show();
                         }
                     })
                     .setNegativeButton("Hủy", null)
@@ -112,7 +120,7 @@ public class IncomeAdapter extends RecyclerView.Adapter<IncomeAdapter.IncomeView
 
     public static class IncomeViewHolder extends RecyclerView.ViewHolder {
         TextView tvAmount, tvCategory, tvDate;
-        Button btnEdit, btnDelete;
+        ImageButton btnEdit, btnDelete;
 
         public IncomeViewHolder(@NonNull View itemView) {
             super(itemView);

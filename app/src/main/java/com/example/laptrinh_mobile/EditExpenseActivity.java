@@ -13,45 +13,45 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class EditExpenseActivity extends AppCompatActivity {
-
-    private EditText etAmount, etNote, etDate;
+    private EditText etAmount, etDescription, etDate;
     private Spinner spinnerCategory;
     private DatabaseHelper dbHelper;
-    private long expenseId;
     private Calendar calendar;
+    private int expenseId; // Sửa từ long sang int
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
 
-        dbHelper = new DatabaseHelper(this);
-        calendar = Calendar.getInstance();
+        try {
+            dbHelper = DatabaseManager.getInstance().getDatabaseHelper();
+        } catch (IllegalStateException e) {
+            Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
 
+        calendar = Calendar.getInstance();
         etAmount = findViewById(R.id.et_amount);
-        etNote = findViewById(R.id.et_note);
+        etDescription = findViewById(R.id.et_description);
         etDate = findViewById(R.id.et_date);
         spinnerCategory = findViewById(R.id.spinner_category);
 
-        // Thiết lập Spinner cho danh mục chi tiêu
-        String[] categories = {"Ăn uống", "Giải trí", "Giáo dục", "Di chuyển", "Khác"};
+        expenseId = getIntent().getIntExtra("expenseId", -1); // Sửa từ getLongExtra sang getIntExtra
+        double amount = getIntent().getDoubleExtra("amount", 0.0);
+        String category = getIntent().getStringExtra("category");
+        String date = getIntent().getStringExtra("date");
+        String description = getIntent().getStringExtra("description");
+
+        String[] categories = {"Ăn uống", "Di chuyển", "Mua sắm", "Hóa đơn", "Khác"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategory.setAdapter(adapter);
 
-        // Lấy dữ liệu từ Intent
-        expenseId = getIntent().getLongExtra("EXPENSE_ID", -1);
-        double amount = getIntent().getDoubleExtra("EXPENSE_AMOUNT", 0.0);
-        String category = getIntent().getStringExtra("EXPENSE_CATEGORY");
-        String date = getIntent().getStringExtra("EXPENSE_DATE");
-        String note = getIntent().getStringExtra("EXPENSE_NOTE");
-
-        // Hiển thị dữ liệu lên giao diện
         etAmount.setText(String.valueOf(amount));
-        etNote.setText(note != null ? note : "");
+        etDescription.setText(description);
         etDate.setText(date);
-
-        // Thiết lập danh mục trong Spinner
         for (int i = 0; i < categories.length; i++) {
             if (categories[i].equals(category)) {
                 spinnerCategory.setSelection(i);
@@ -59,23 +59,20 @@ public class EditExpenseActivity extends AppCompatActivity {
             }
         }
 
-        // Thiết lập ngày từ dữ liệu
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
             calendar.setTime(dateFormat.parse(date));
         } catch (Exception e) {
-            e.printStackTrace();
+            Toast.makeText(this, "Ngày không hợp lệ, sử dụng ngày hiện tại", Toast.LENGTH_SHORT).show();
+            calendar = Calendar.getInstance();
         }
 
-        // Xử lý chọn ngày
         etDate.setOnClickListener(v -> showDatePickerDialog());
 
-        // Xử lý nút Cập nhật
         Button btnSave = findViewById(R.id.btn_save);
         btnSave.setText("Cập nhật");
-        btnSave.setOnClickListener(v -> updateExpense());
+        btnSave.setOnClickListener(v -> saveExpense());
 
-        // Xử lý nút Quay lại
         Button btnBack = findViewById(R.id.btn_back);
         btnBack.setOnClickListener(v -> finish());
     }
@@ -92,11 +89,11 @@ public class EditExpenseActivity extends AppCompatActivity {
         etDate.setText(dateFormat.format(calendar.getTime()));
     }
 
-    private void updateExpense() {
+    private void saveExpense() {
         String amountStr = etAmount.getText().toString();
         String category = spinnerCategory.getSelectedItem().toString();
         String date = etDate.getText().toString();
-        String note = etNote.getText().toString();
+        String description = etDescription.getText().toString();
 
         if (amountStr.isEmpty() || category.isEmpty() || date.isEmpty()) {
             Toast.makeText(this, "Vui lòng điền đầy đủ thông tin bắt buộc", Toast.LENGTH_SHORT).show();
@@ -105,7 +102,11 @@ public class EditExpenseActivity extends AppCompatActivity {
 
         try {
             double amount = Double.parseDouble(amountStr);
-            int rowsAffected = dbHelper.updateExpense(expenseId, amount, category, date, note);
+            if (expenseId == -1) {
+                Toast.makeText(this, "ID chi tiêu không hợp lệ", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            int rowsAffected = dbHelper.updateExpense(expenseId, amount, category, date, description);
             if (rowsAffected > 0) {
                 Toast.makeText(this, "Đã cập nhật chi tiêu", Toast.LENGTH_SHORT).show();
                 finish();
